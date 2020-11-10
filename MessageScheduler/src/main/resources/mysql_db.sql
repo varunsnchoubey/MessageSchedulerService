@@ -1,3 +1,4 @@
+CREATE SCHEMA `MessageSchedulerDB` ;
 CREATE TABLE `MessageSchedulerDB`.`messagedetails` (
   `id` INT NOT NULL AUTO_INCREMENT COMMENT '',
   `message` VARCHAR(45) NOT NULL COMMENT '',
