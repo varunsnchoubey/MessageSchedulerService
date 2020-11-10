@@ -3,7 +3,7 @@ The MessageSchedulerService Project has been developed with Springboot RESTAPI M
   - To run this project  import project as maven and do maven clean and maven install.
   - Run the springboot project and the project starts on port 8082
   - The project uses MYSQL Database and at the time of initializing, it checks if the connection to MYSQL Database is   successfull. 
-  - The project mysql_db.sql which can be used to create schema MessageSchedulerDB and Table messagedetails in MYSQL Database.
+  - The file under src/main/resources/mysql_db.sql which can be used to create schema MessageSchedulerDB and Table messagedetails in MYSQL Database.
   - The project has MessageDetailEntity that is used to persist Message(String), Date(String), time(String) and timezone(String) in messagedetails table.
  
 # Running as a packaged application
