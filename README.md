@@ -34,8 +34,8 @@ Content-Type : application/json
 ```sh
 message (String)  | Required     : Message should not be null, empty or blank. 
 time (String)     | Required     : Time must be in hh:mm:ss am/pm format.
-date (String)     | Required   : date must be in dd/MM/yyyy format.
-timeZone (String) | Optional    : TimeZone should be valid, defaults to server/jvm timezone.
+date (String)     | Required     : date must be in dd/MM/yyyy format.
+timeZone (String) | Optional     : TimeZone should be valid, defaults to server/jvm timezone.
 ```
 #### Successful scheduling of Message produces following Response:
 ```sh
