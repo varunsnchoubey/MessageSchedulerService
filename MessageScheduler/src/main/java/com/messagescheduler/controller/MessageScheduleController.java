@@ -9,12 +9,15 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.messagescheduler.model.MessageInfo;
 import com.messagescheduler.service.MessageSchedulerServiceImpl;
 
 @RestController
+@RequestMapping("/api")
+//swagger ui : http://localhost:8082/swagger-ui/index.html
 public class MessageScheduleController {
 
 	@Autowired
