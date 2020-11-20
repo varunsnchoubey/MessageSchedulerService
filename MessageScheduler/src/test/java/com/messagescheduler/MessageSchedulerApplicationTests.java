@@ -69,21 +69,21 @@ class MessageSchedulerApplicationTests {
 
 	@Test
 	void shouldReturnStatusAccepted() throws Exception {
-		this.mockMvc.perform(post("/message").contentType(MediaType.APPLICATION_JSON).content(VALID_REQUEST_BODY))
+		this.mockMvc.perform(post("/api/message").contentType(MediaType.APPLICATION_JSON).content(VALID_REQUEST_BODY))
 				.andExpect(status().isAccepted());
 	}
 
 	@Test
 	void shouldReturnStatusBadRequestForInvalidTimeRequestBody() throws Exception {
 		this.mockMvc
-				.perform(post("/message").contentType(MediaType.APPLICATION_JSON).content(INVALID_TIME_REQUEST_BODY))
+				.perform(post("/api/message").contentType(MediaType.APPLICATION_JSON).content(INVALID_TIME_REQUEST_BODY))
 				.andExpect(status().isBadRequest());
 	}
 
 	@Test
 	void shouldContainInvalidTimeFormatMessageInResponseBody() throws Exception {
 		this.mockMvc
-				.perform(post("/message").contentType(MediaType.APPLICATION_JSON).content(INVALID_TIME_REQUEST_BODY))
+				.perform(post("/api/message").contentType(MediaType.APPLICATION_JSON).content(INVALID_TIME_REQUEST_BODY))
 				.andExpect(status().isBadRequest())
 				.andExpect(content().string(containsString(INVALID_TIME_FORMAT_ERROR_MESSAGE)));
 	}
@@ -91,14 +91,14 @@ class MessageSchedulerApplicationTests {
 	@Test
 	void shouldReturnStatusBadRequestForBlankMessageRequestBody() throws Exception {
 		this.mockMvc
-				.perform(post("/message").contentType(MediaType.APPLICATION_JSON).content(BLANK_MESSAGE_REQUEST_BODY))
+				.perform(post("/api/message").contentType(MediaType.APPLICATION_JSON).content(BLANK_MESSAGE_REQUEST_BODY))
 				.andExpect(status().isBadRequest());
 	}
 
 	@Test
 	void shouldContainInvalidBlankErrorMessageInResponseBody() throws Exception {
 		this.mockMvc
-				.perform(post("/message").contentType(MediaType.APPLICATION_JSON).content(BLANK_MESSAGE_REQUEST_BODY))
+				.perform(post("/api/message").contentType(MediaType.APPLICATION_JSON).content(BLANK_MESSAGE_REQUEST_BODY))
 				.andExpect(status().isBadRequest())
 				.andExpect(content().string(containsString(BLANK_MESSAGE_ERROR_MESSAGE)));
 	}
@@ -106,14 +106,14 @@ class MessageSchedulerApplicationTests {
 	@Test
 	void shouldReturnStatusBadRequestForInvalidTimezoneRequestBody() throws Exception {
 		this.mockMvc
-				.perform(post("/message").contentType(MediaType.APPLICATION_JSON).content(INVALID_TIME_REQUEST_BODY))
+				.perform(post("/api/message").contentType(MediaType.APPLICATION_JSON).content(INVALID_TIME_REQUEST_BODY))
 				.andExpect(status().isBadRequest());
 	}
 
 	@Test
 	void shouldContainInvalidTimezoneErrorMessageInResponseBody() throws Exception {
 		this.mockMvc
-				.perform(post("/message").contentType(MediaType.APPLICATION_JSON)
+				.perform(post("/api/message").contentType(MediaType.APPLICATION_JSON)
 						.content(INVALID_TIMEZONE_FORMAT_REQUEST_BODY))
 				.andExpect(status().isBadRequest())
 				.andExpect(content().string(containsString(INVALID_TIMEZONE_FORMAT_ERROR_MESSAGE)));
