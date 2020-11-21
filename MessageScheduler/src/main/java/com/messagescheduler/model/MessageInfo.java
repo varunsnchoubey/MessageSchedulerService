@@ -15,12 +15,15 @@ import javax.validation.constraints.Pattern;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import io.swagger.annotations.ApiModelProperty;
+
 public class MessageInfo {
 
 	private static Logger LOGGER = LoggerFactory.getLogger(MessageInfo.class);
 
 	private static final Set<String> TIMEZONES = new HashSet<>(Arrays.asList(TimeZone.getAvailableIDs()));
-
+	
+	@ApiModelProperty(notes = "Message in string",name="name",required=true,value="test name")
 	@NotNull (message = "Message should not be null")
 	@NotBlank(message = "Message should not be blank")
 	@NotEmpty(message = "Message should not be empty")
